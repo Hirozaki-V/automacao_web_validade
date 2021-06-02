@@ -56,3 +56,52 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1622662630362	geckodriver	INFO	Listening on 127.0.0.1:51477
+1622662633835	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\victo\\AppData\\Local\\Temp\\rust_mozprofileLZhIIJ"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+[Parent 1876, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:166
+1622662644035	Marionette	INFO	Listening on port 51489
+1622662644544	Marionette	WARN	TLS certificate errors will be ignored for this session
+1622662649142	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://webvalidade.com/dashboard, line 1460: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1468: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1477: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1522: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: TypeError: $(...).toc is not a function
+1622662677718	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1622662689510	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1622662695517	Marionette	INFO	Stopped listening on port 51489
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1622667626216	geckodriver	INFO	Listening on 127.0.0.1:59694
+1622667629808	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\victo\\AppData\\Local\\Temp\\rust_mozprofileuMrlR5"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622667641571	Marionette	INFO	Listening on port 59703
+1622667641698	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://webvalidade.com/dashboard, line 1460: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1468: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1477: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1522: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: TypeError: $(...).toc is not a function
+1622667672257	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1622667689534	Marionette	INFO	Stopped listening on port 59703
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
