@@ -105,3 +105,24 @@ JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEven
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1622658821131	geckodriver	INFO	Listening on 127.0.0.1:55361
+1622658824306	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\victo\\AppData\\Local\\Temp\\rust_mozprofileirWFB1"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622658834517	Marionette	INFO	Listening on port 55371
+1622658834683	Marionette	WARN	TLS certificate errors will be ignored for this session
+1622658838587	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://webvalidade.com/dashboard, line 1460: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1468: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1477: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1522: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: TypeError: $(...).toc is not a function
+1622658865589	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1622658882604	Marionette	INFO	Stopped listening on port 55371
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
