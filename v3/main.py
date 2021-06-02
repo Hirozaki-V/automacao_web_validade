@@ -4,7 +4,6 @@ from tkinter.tix import *
 from selenium import webdriver
 import pandas as pd
 import re
-import time
 from time import sleep
 
 
@@ -82,9 +81,6 @@ class Janela:
         self.registerButton["command"] = self.register
         self.registerButton.grid()
 
-        self.firstContainer.rowconfigure(0, minsize=20)
-       # w.columnconfigure(1, weight=1)
-
     # Função para mostrar senha
     def show_pass(self):
         if self.showPassword["text"] == "Mostrar Senha":
@@ -103,7 +99,7 @@ class Janela:
     # Função para validar o e-mail
     def is_email(self, data):
         emailre = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
-        return emailre.match(data) != None
+        return emailre.match(data) is not None
 
     def register(self):
         # Verificando se o diretório já foi selecionado
