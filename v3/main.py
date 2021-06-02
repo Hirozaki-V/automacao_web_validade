@@ -179,6 +179,6 @@ class Janela:
 root = Tk()
 root.geometry("710x450")
 root.resizable(False, False)
-root.title("Cadastro automático WebValidade v2")
+root.title("Cadastro automático WebValidade v3")
 Janela(root)
 root.mainloop()
