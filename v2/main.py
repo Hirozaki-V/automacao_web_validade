@@ -49,6 +49,7 @@ class Janela:
         self.registerButton["command"] = self.register
         self.registerButton.grid()
 
+    # Função para mostrar senha
     def show_pass(self):
         if self.showPassword["text"] == "Mostrar Senha":
             self.showPassword["text"] = "Esconder Senha"
@@ -62,22 +63,27 @@ class Janela:
         filename = filedialog.askopenfilename(title="Select a File", filetype=(("Excel", "*.xlsx"), ("Excel", "*.xls")))
         self.showPath["text"] = filename
         return filename
-
+    
+    # Função para validar o e-mail
     def is_email(self, data):
         emailre = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
         return emailre.match(data) != None
 
     def register(self):
+        # Verificando se o diretório já foi selecionado
         try:
             filename1 = filename
         except:
             messagebox.showerror("Erro!", "Por favor, selecione o caminho da Planilha!")
         else:
+            # Pegando os textos das caixas de entrada
             email = self.mailEntry.get()
             password = self.passwordEntry.get()
             is_email = self.is_email(email)
+            # Mostrar mensagem de erro caso o e-mail não seja válido
             if not is_email:
                 messagebox.showerror("Erro!", "Por favor, digite um e-mail válido!")
+            # Mostrar mensagem de erro caso a senha esteja em branco
             elif password == "":
                 messagebox.showerror("Erro!", "Por favor, não deixe os campos em branco!")
             else:
@@ -126,6 +132,7 @@ class Janela:
                 # Fechando o navegador
                 navegador.close()
 
+                # Mostrando mensagem de finalização
                 messagebox.showinfo("Fim!", "Usuários cadastrados com sucesso!")
 
 

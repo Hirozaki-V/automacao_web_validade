@@ -47,3 +47,61 @@ JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: Type
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1622657008389	geckodriver	INFO	Listening on 127.0.0.1:61103
+1622657011402	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\victo\\AppData\\Local\\Temp\\rust_mozprofileE1VocB"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622657022589	Marionette	INFO	Listening on port 61111
+1622657022844	Marionette	WARN	TLS certificate errors will be ignored for this session
+1622657026729	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://webvalidade.com/dashboard, line 1460: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1468: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1477: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1522: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: TypeError: $(...).toc is not a function
+1622657054060	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1622657071291	Marionette	INFO	Stopped listening on port 61111
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1622657283512	geckodriver	INFO	Listening on 127.0.0.1:51425
+1622657286655	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\victo\\AppData\\Local\\Temp\\rust_mozprofileiYBVEx"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622657299207	Marionette	INFO	Listening on port 51434
+1622657299861	Marionette	WARN	TLS certificate errors will be ignored for this session
+1622657304212	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://webvalidade.com/dashboard, line 1460: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1468: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1477: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1522: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: TypeError: $(...).toc is not a function
+1622657332949	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1622657345411	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1622657351568	Marionette	INFO	Stopped listening on port 51434
+1622657688457	geckodriver	INFO	Listening on 127.0.0.1:60867
+1622657691512	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\victo\\AppData\\Local\\Temp\\rust_mozprofileGfsWiC"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622657698160	Marionette	INFO	Listening on port 60875
+1622657698320	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://webvalidade.com/dashboard, line 1460: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1468: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1477: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/dashboard, line 1522: ReferenceError: exibirApp is not defined
+JavaScript error: https://webvalidade.com/colorPicker/docs/docs.js, line 9: TypeError: $(...).toc is not a function
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1622657742976	Marionette	INFO	Stopped listening on port 60875
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
