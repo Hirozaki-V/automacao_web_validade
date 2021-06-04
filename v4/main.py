@@ -6,7 +6,6 @@ import pandas as pd
 import re
 from time import sleep
 import csv
-import os
 
 
 class Janela:
