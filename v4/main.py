@@ -237,6 +237,7 @@ class Janela:
 root = Tk()
 root.geometry("710x450")
 root.resizable(False, False)
+root.iconbitmap('./files/brain.ico')
 root.title("Cadastro automático WebValidade v4")
 Janela(root)
 root.mainloop()
