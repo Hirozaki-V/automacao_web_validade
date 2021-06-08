@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import filedialog, messagebox
-from tkinter.tix import *
 from selenium import webdriver
 import pandas as pd
 import re
@@ -61,10 +60,8 @@ class Janela:
         self.showPath.pack(pady=13)
 
         # Digitar o nome das células
-        tip = Balloon(root)  # Criando um tooltip
-        self.help = Label(self.thirdContainer, text="i", bd=1, relief='raised', width=3, height=1)
+        self.help = Label(self.thirdContainer, text="", width=3, height=1)
         self.help.grid(row=0, column=5)
-        tip.bind_widget(self.help, balloonmsg="Escreva os nomes referente ao nome das células da coluna na planilha.")
         self.ghost = Label(self.thirdContainer, text="", width=3, height=1)
         self.ghost.grid(row=3, column=0)
         self.nameLabel = Label(self.thirdContainer, text="Nome:")
@@ -237,6 +234,6 @@ class Janela:
 root = Tk()
 root.geometry("710x450")
 root.resizable(False, False)
-root.title("Cadastro automático WebValidade v4")
+root.title("Cadastro automático WebValidade v5")
 Janela(root)
 root.mainloop()
