@@ -88,8 +88,9 @@ class Janela:
         self.mailEntry.grid(row=0, column=1, ipadx=25)
         # Checkbutton lembrar dados
         self.rememberVar = IntVar()
-        self.rememberCheck = Checkbutton(self.firstContainer, text="Lembrar dados", variable=self.rememberVar, onvalue=1, offvalue=0)
-        self.rememberCheck["command"] = self.rememberData
+        self.rememberCheck = Checkbutton(self.firstContainer, text="Lembrar dados", variable=self.rememberVar,
+                                         onvalue=1, offvalue=0)
+        self.rememberCheck["command"] = self.remember_data
         self.rememberCheck.grid(row=0, column=2)
 
         self.passwordLabel = Label(self.firstContainer, text="Senha para Login:")
@@ -98,7 +99,8 @@ class Janela:
         self.passwordEntry.grid(row=1, column=1, padx=20, ipadx=25)
         # Checknutton mostrar senha
         self.isCheck = IntVar()
-        self.showPassword = Checkbutton(self.firstContainer, text="Mostrar Senha", variable=self.isCheck, onvalue=1, offvalue=0)
+        self.showPassword = Checkbutton(self.firstContainer, text="Mostrar Senha", variable=self.isCheck,
+                                        onvalue=1, offvalue=0)
         self.showPassword["command"] = self.show_pass
         self.showPassword.grid(row=1, column=2, pady=10)
 
@@ -159,18 +161,18 @@ class Janela:
                     check = line[0]
                     mail = line[1]
                     password = line[2]
-                    cellName = line[3]
-                    cellLastName = line[4]
-                    cellMail = line[5]
-                    cellPassword = line[6]
+                    cell_name = line[3]
+                    cell_last_name = line[4]
+                    cell_mail = line[5]
+                    cell_password = line[6]
                 if check == '1':
                     self.rememberCheck.select()
                     self.mailEntry.insert(END, mail)
                     self.passwordEntry.insert(END, password)
-                    self.nameEntry.insert(END, cellName)
-                    self.lastnameEntry.insert(END, cellLastName)
-                    self.cellMailEntry.insert(END, cellMail)
-                    self.passwordCellEntry.insert(END, cellPassword)
+                    self.nameEntry.insert(END, cell_name)
+                    self.lastnameEntry.insert(END, cell_last_name)
+                    self.cellMailEntry.insert(END, cell_mail)
+                    self.passwordCellEntry.insert(END, cell_password)
 
         except Exception as inst:
             print(f'Erro ao ler o arquivo .csv {inst}')
@@ -179,14 +181,15 @@ class Janela:
             self.passwordEntry.delete(END)
 
     # Função para guardar os dados
-    def rememberData(self):
+    def remember_data(self):
         if self.rememberVar.get() == 1:
             # 1. cria o arquivo
             f = open('./files/data.csv', 'w', newline='', encoding='utf-8')
             # 2. cria o objeto de gravação
             w = csv.writer(f)
             # 3. grava as linhas
-            w.writerow([self.rememberVar.get(), self.mailEntry.get(), self.passwordEntry.get(), self.nameEntry.get(), self.lastnameEntry.get(), self.cellMailEntry.get(), self.passwordCellEntry.get()])
+            w.writerow([self.rememberVar.get(), self.mailEntry.get(), self.passwordEntry.get(), self.nameEntry.get(),
+                        self.lastnameEntry.get(), self.cellMailEntry.get(), self.passwordCellEntry.get()])
         if self.rememberVar.get() == 0:
             # 1. cria o arquivo
             f = open('./files/data.csv', 'w', newline='', encoding='utf-8')
@@ -226,23 +229,23 @@ class Janela:
             email = self.mailEntry.get()
             password = self.passwordEntry.get()
             is_email = self.is_email(email)
-            cellName = self.nameEntry.get()
-            cellLastName = self.lastnameEntry.get()
-            cellMail = self.cellMailEntry.get()
-            cellPassword = self.passwordCellEntry.get()
+            cell_name = self.nameEntry.get()
+            cell_last_name = self.lastnameEntry.get()
+            cell_mail = self.cellMailEntry.get()
+            cell_password = self.passwordCellEntry.get()
             # Mostrar mensagem de erro caso o e-mail não seja válido
             if not is_email:
                 messagebox.showerror("Erro!", "Por favor, digite um e-mail válido!")
             # Mostrar mensagem de erro caso a senha esteja em branco
-            elif password == "" or cellName == "" or cellLastName == "" or cellMail == "" or cellPassword == "":
+            elif password == "" or cell_name == "" or cell_last_name == "" or cell_mail == "" or cell_password == "":
                 messagebox.showerror("Erro!", "Por favor, não deixe os campos em branco!")
             else:
                 # Pegando Dados da Planilhas
                 df = pd.read_excel(filename1)
-                name = df[cellName].tolist()
-                lastname = df[cellLastName].tolist()
-                mail = df[cellMail].tolist()
-                password1 = df[cellPassword].tolist()
+                name = df[cell_name].tolist()
+                lastname = df[cell_last_name].tolist()
+                mail = df[cell_mail].tolist()
+                password1 = df[cell_password].tolist()
 
                 # Definindo o navegador
                 navegador = webdriver.Firefox()
