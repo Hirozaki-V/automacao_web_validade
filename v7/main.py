@@ -1,13 +1,66 @@
 from tkinter import *
 from tkinter import filedialog, messagebox
+from tkinter import ttk
 from tkhtmlview import HTMLLabel
 from selenium import webdriver
 import pandas as pd
 import re
 from time import sleep
 import csv
+from PIL import Image, ImageTk
 
 
+# criando SplashScreen
+class Waiting:
+    def __init__(self, master=None):
+        self.firstContainer = Frame()
+        self.firstContainer.pack()
+
+        # Colocando imagem na tela
+        x = './files/logo/banner.png'
+        img = Image.open(x)
+        img = img.resize((900, 380), Image.ANTIALIAS)
+        img = ImageTk.PhotoImage(img)
+        panel = Label(self.firstContainer, image=img)
+        panel.image = img
+        panel.pack(side=TOP)
+
+        # Colocando barra de progresso na tela
+        pro = ttk.Progressbar(self.firstContainer, orient=HORIZONTAL, mode="determinate", length=900)
+        pro.pack(side=BOTTOM)
+        t = 0
+        while t < 100:
+            pro['value'] += 20
+            root.update_idletasks()
+            t += 20
+            sleep(0.5)
+        else:
+            root.after(100, self.task)
+
+    def task(self):
+        sleep(2)
+        root.destroy()
+
+        root1 = Tk()
+        root1.geometry(self.center(root1))
+        root1.resizable(False, False)
+        root1.iconbitmap('./files/icone/brain.ico')
+        root1.title("Cadastro automático WebValidade v6")
+        Janela(root)
+        root1.mainloop()
+
+    # Centralizando a tela
+    @staticmethod
+    def center(win):
+        win.update_idletasks()
+        width = 710  # win.winfo_width()
+        height = 450  # win.winfo_height()
+        x = int((win.winfo_screenwidth() / 2) - (width / 2))
+        y = int((win.winfo_screenheight() / 2) - (height / 2))
+        return f"{width}x{height}+{x}+{y}"
+
+
+# Criando janela principal
 class Janela:
     def __init__(self, master=None):
         # Containers
@@ -99,17 +152,17 @@ class Janela:
         try:
             with open('./files/data.csv', encoding='utf-8') as csv_file:
                 # 2. ler a tabela
-                tabela = csv.reader(csv_file, delimiter=',')
+                table = csv.reader(csv_file, delimiter=',')
 
                 # 3. navegar pela tabela
-                for l in tabela:
-                    check = l[0]
-                    mail = l[1]
-                    password = l[2]
-                    cellName = l[3]
-                    cellLastName = l[4]
-                    cellMail = l[5]
-                    cellPassword = l[6]
+                for line in table:
+                    check = line[0]
+                    mail = line[1]
+                    password = line[2]
+                    cellName = line[3]
+                    cellLastName = line[4]
+                    cellMail = line[5]
+                    cellPassword = line[6]
                 if check == '1':
                     self.rememberCheck.select()
                     self.mailEntry.insert(END, mail)
@@ -156,8 +209,8 @@ class Janela:
         self.showPath["text"] = filename
         return filename
 
-    # Função para validar o e-mail
-    def is_email(self, data):
+    @staticmethod
+    def is_email(data):
         emailre = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
         return emailre.match(data) is not None
 
@@ -166,8 +219,8 @@ class Janela:
         # Verificando se o diretório já foi selecionado
         try:
             filename1 = filename
-        except:
-            messagebox.showerror("Erro!", "Por favor, selecione o caminho da Planilha!")
+        except ValueError as inst:
+            messagebox.showerror("Erro!", f"Por favor, selecione o caminho da Planilha! {inst}")
         else:
             # Pegando os textos das caixas de entrada
             email = self.mailEntry.get()
@@ -257,10 +310,18 @@ class Window(Toplevel):
         Button(self, text='Ok', command=self.destroy, width=7).pack()
 
 
+# Centralizando a Splash Screen
+def center(win):
+    win.update_idletasks()
+    width = 900  # win.winfo_width()
+    height = 400  # win.winfo_height()
+    x = int((win.winfo_screenwidth() / 2) - (width / 2))
+    y = int((win.winfo_screenheight() / 2) - (height / 2))
+    return f"{width}x{height}+{x}+{y}"
+
+
 root = Tk()
-root.geometry("710x450")
-root.resizable(False, False)
-root.iconbitmap('./files/icone/brain.ico')
-root.title("Cadastro automático WebValidade v6")
-Janela(root)
+root.geometry(center(root))
+root.overrideredirect(True)
+Waiting(root)
 root.mainloop()
