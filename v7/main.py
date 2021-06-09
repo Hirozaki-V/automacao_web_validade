@@ -45,7 +45,7 @@ class Waiting:
         root1.geometry(self.center(root1))
         root1.resizable(False, False)
         root1.iconbitmap('./files/icone/brain.ico')
-        root1.title("Cadastro automático WebValidade v6")
+        root1.title("Cadastro automático WebValidade v7")
         Janela(root)
         root1.mainloop()
 
