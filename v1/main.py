@@ -6,7 +6,7 @@ import time
 
 tempo_inicial = time.time()
 # Pegando Dados da Planilhas
-df = pd.read_excel('./infos.xlsx')
+df = pd.read_excel('./files/infos.xlsx')
 name = df['Nome'].tolist()
 lastname = df['Sobrenome'].tolist()
 mail = df['E-mail'].tolist()

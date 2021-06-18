@@ -45,7 +45,7 @@ class Waiting:
         root1.geometry(self.center(root1))
         root1.resizable(False, False)
         root1.iconbitmap('./files/icone/icone.ico')
-        root1.title("Cadastro automático WebValidade v7")
+        root1.title("Cadastro automático WebValidade v8")
         Janela(root)
         root1.mainloop()
 
@@ -81,6 +81,7 @@ class Janela:
         self.titleLabel = Label(self.titleContainer, text="Automação WebValidade")
         self.titleLabel["font"] = "Arial 20 bold"
         self.titleLabel.pack(pady=20)
+        
         # Login
         self.mailLabel = Label(self.firstContainer, text="E-mail para Login:")
         self.mailLabel.grid(row=0, column=0)
@@ -110,6 +111,7 @@ class Janela:
         self.selectButton = Button(self.secondContainer, text="Selecionar")
         self.selectButton["command"] = self.upload_excel
         self.selectButton.grid(row=0, column=1, pady=5, padx=10)
+
 
         # Monstrar caminho planilha
         self.showPath = Label(self.showPathContainer, text="")
@@ -141,12 +143,48 @@ class Janela:
         # Botão cadastro de usuários
         self.registerButton = Button(self.fourthContainer, text="Cadastar Usuários")
         self.registerButton["command"] = self.register
-        self.registerButton.grid()
+        self.registerButton.grid(row=0, column=0)
+
+        # Botão Mostrar Planilha
+        self.open = Button(self.fourthContainer, text="Visualizar Planilha")
+        self.open["command"] = self.show
+        self.open.grid(row=0, column=1)
 
         self.verificar_dados()
 
+    # Abrir janela de ajuda
     def open_info(self):
         window = Window(self)
+        window.grab_set()
+
+    # Abrir janela de visualização da planilha
+    def show(self):
+        try:
+            filename1 = filename
+        except:
+            messagebox.showerror("Erro!", "Por favor, selecione o caminho da Planilha!")
+        else:
+            cell_name = self.nameEntry.get()
+            cell_last_name = self.lastnameEntry.get()
+            cell_mail = self.cellMailEntry.get()
+            cell_password = self.passwordCellEntry.get()
+            if cell_name == "" or cell_last_name == "" or cell_mail == "" or cell_password == "":
+                messagebox.showerror("Erro!", "Por favor, não deixe os campos em branco!")
+            else:
+                 try:
+                    # Pegando Dados da Planilhas
+                    df = pd.read_excel(filename1)
+                    name = df[cell_name].tolist()
+                    lastname = df[cell_last_name].tolist()
+                    mail = df[cell_mail].tolist()
+                    password1 = df[cell_password].tolist()
+                 except:
+                     messagebox.showerror("Erro!", "Por favor, certifique se os nomes das colunas estão corretos")
+                
+        dados = zip(name, lastname, mail, password1)
+        nome_planilha = self.showPath.cget("text")
+
+        window = Show(self, dados=dados, nome_planilha=nome_planilha)
         window.grab_set()
 
     # Verifica se a checkbox está marcada para ler o arquivo CSV
@@ -265,9 +303,10 @@ class Janela:
                 sleep(5)
                 navegador.find_element_by_xpath('//*[@id="form1"]/nav/ul/div[1]/a[4]/i').click()
                 sleep(5)
+                dados = zip(name, lastname, mail, password1)
 
                 # Criando as contas
-                for nome, sobrenome, email1, senha in zip(name, lastname, mail, password1):
+                for nome, sobrenome, email1, senha in dados:
                     # Escrevendo o email e a senha
                     navegador.find_element_by_xpath('//*[@id="wizard_with_validation-p-0"]/div[1]/div/input').send_keys(
                         email1)
@@ -311,6 +350,24 @@ class Window(Toplevel):
         HTMLLabel(self, html=text, height=8, width=90).pack(pady=20)
 
         Button(self, text='Ok', command=self.destroy, width=7).pack()
+
+# Janela vizualização da planilha
+class Show(Toplevel):
+     def __init__(self, master=None, dados=[], nome_planilha=""):
+        super().__init__()
+        self.resizable(False, False)
+        self.title(nome_planilha)
+
+        self.tree = ttk.Treeview(self, columns=("nome", "sobrenome", "email", "senha"), show="headings")
+        self.tree.heading("nome", text="Nome")
+        self.tree.heading("sobrenome", text="Sobrenome")
+        self.tree.heading("email", text="E-mail")
+        self.tree.heading("senha", text="Senha")
+        self.tree.pack()
+
+
+        for nome, sobrenome, email, senha in dados:
+            self.tree.insert("", END, values=(nome, sobrenome, email, senha))
 
 
 # Centralizando a Splash Screen
