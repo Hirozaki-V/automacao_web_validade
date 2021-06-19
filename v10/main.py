@@ -112,7 +112,6 @@ class Janela:
         self.selectButton["command"] = self.upload_excel
         self.selectButton.grid(row=0, column=1, pady=5, padx=10)
 
-
         # Monstrar caminho planilha
         self.showPath = Label(self.showPathContainer, text="")
         self.showPath.pack(pady=13)
@@ -332,9 +331,10 @@ class Window(Toplevel):
 
         Button(self, text='Ok', command=self.destroy, width=7).pack()
 
+
 # Janela vizualização da planilha
 class Show(Toplevel):
-     def __init__(self, master=None, nome_planilha=""):
+    def __init__(self, master=None, nome_planilha=""):
         super().__init__()
         try:
             nome_planilha = nome_planilha
@@ -348,7 +348,6 @@ class Show(Toplevel):
 
         self.frame_pesquisa = Frame(self)
         self.frame_pesquisa.pack()
-
 
         self.tree = ttk.Treeview(self.frame_planilha)
         df = pd.read_excel(nome_planilha)
@@ -374,10 +373,10 @@ class Show(Toplevel):
         self.search_entry.grid(row=0, column=1, ipadx=10, ipady=2)
         self.search_entry.bind("<KeyRelease>", self.search)
 
-     def search(self, event):
+    def search(self, event):
         query = self.search_entry.get()
         selections = []
-        
+
         for child in self.tree.get_children():
             if query.lower().strip() in str(self.tree.item(child)['values']).lower().strip():
                 print(self.tree.item(child)['values'])
@@ -387,7 +386,8 @@ class Show(Toplevel):
         if query == "":
             for item in self.tree.selection():
                 self.tree.selection_remove(item)
-     
+
+
 # Centralizando a Splash Screen
 def center(win):
     win.update_idletasks()

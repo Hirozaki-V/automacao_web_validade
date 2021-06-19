@@ -112,7 +112,6 @@ class Janela:
         self.selectButton["command"] = self.upload_excel
         self.selectButton.grid(row=0, column=1, pady=5, padx=10)
 
-
         # Monstrar caminho planilha
         self.showPath = Label(self.showPathContainer, text="")
         self.showPath.pack(pady=13)
@@ -171,7 +170,7 @@ class Janela:
             if cell_name == "" or cell_last_name == "" or cell_mail == "" or cell_password == "":
                 messagebox.showerror("Erro!", "Por favor, não deixe os campos em branco!")
             else:
-                 try:
+                try:
                     # Pegando Dados da Planilhas
                     df = pd.read_excel(filename1)
                     name = df[cell_name].tolist()
